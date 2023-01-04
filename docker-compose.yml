@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  alpine-binary-c-hl-hobo:
+    build: .
+    image: alpine-binary-c-hl:latest
+    hostname: 'hobo'
+    environment:
+      - HL_USER_USERNAME=hacker
+      - HL_USER_PASSWORD=compass
+    ports:
+      - "80:80"
+      - "1234:1234"
+    env_file: 39d8bfc1-4152-4e6e-8843-38f8a7a5b13b.env
+
+    volumes:
+      - ./39d8bfc1-4152-4e6e-8843-38f8a7a5b13b.gn:/goldnugget/39d8bfc1-4152-4e6e-8843-38f8a7a5b13b.gn
+
