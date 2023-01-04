@@ -1,4 +1,4 @@
-# alpine-binary-c-hl (39d8bfc1-4152-4e6e-8843-38f8a7a5b13b)
+# alpine-binary-c-hl
 This docker is based on the Alpine Binary C app image of the Hacking-Lab CTF system.  
 This docker provides a executable Binary C app.
 

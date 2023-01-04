@@ -11,8 +11,3 @@ services:
     ports:
       - "80:80"
       - "1234:1234"
-    env_file: 39d8bfc1-4152-4e6e-8843-38f8a7a5b13b.env
-
-    volumes:
-      - ./39d8bfc1-4152-4e6e-8843-38f8a7a5b13b.gn:/goldnugget/39d8bfc1-4152-4e6e-8843-38f8a7a5b13b.gn
-
