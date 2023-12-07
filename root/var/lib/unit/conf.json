@@ -1,23 +1,51 @@
 {
 	"access_log": "/dev/stdout",
 	"settings": {
-		"http": {
-			"header_read_timeout": 10,
-			"body_read_timeout": 10,
-			"send_timeout": 10,
-			"idle_timeout": 120
+	  "http": {
+		"header_read_timeout": 10,
+		"body_read_timeout": 10,
+		"send_timeout": 10,
+		"idle_timeout": 120,
+		"max_body_size": 1048576,
+		"static": {
+		  "mime_types": {
+			"text/plain": [
+			  ".txt"
+			],
+			"application/json": [
+			  ".json"
+			]
+
+		  }
 		}
+	  }
 	},
 	"listeners": {
-		"*:80": {
-			"pass": "routes"
-		}
+	  "*:80": {
+		"pass": "routes"
+	  }
 	},
 	"routes": [
-		{
-			"action": {
-				"share": "/web"
-			}
+	  {
+		"match": {
+		  "uri": [
+			"/images/*",
+			"/css/*",
+			"/js/*"
+		  ]
+		},
+		"action": {
+		  "share": "/opt/www/assets"
 		}
+	  },
+	  {
+		"action": {
+			"share": [
+				"/opt/www$uri",
+				"/opt/www/index.html"
+			]
+		}
+	  }
 	]
-}
+  }
+  
