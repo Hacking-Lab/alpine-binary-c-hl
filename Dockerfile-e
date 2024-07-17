@@ -1,6 +1,7 @@
 FROM hackinglab/alpine-unitd-hl:latest
 
-LABEL maintainer="Ivan Buetler <ivan.buetler@compass-security.com>"
+LABEL maintainer=<>
+MAINTAINER  <>
 
 ADD root /
 RUN apk update
